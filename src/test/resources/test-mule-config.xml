@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:secure-log="http://www.mulesoft.org/schema/mule/secure-log"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/secure-log http://www.mulesoft.org/schema/mule/secure-log/current/mule-secure-log.xsd">
+
+    <secure-log:config name="config" configId="configId">
+        <secure-log:connection requiredParameter="aValue" />
+    </secure-log:config>
+
+    <flow name="sayHiFlow">
+        <secure-log:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <secure-log:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
