@@ -1,8 +1,8 @@
 package org.mule.extension.securelog.conf;
 
 import org.mule.extension.securelog.internal.SecureLogOperations;
+import org.mule.extension.securelog.types.AesMode;
 import org.mule.runtime.extension.api.annotation.Operations;
-import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 
 /**
@@ -12,16 +12,18 @@ import org.mule.runtime.extension.api.annotation.param.Parameter;
 @Operations(SecureLogOperations.class)
 public class SecureLogConfiguration {
 
-  @Parameter
-  @Optional
-  private AesConf aesConf;
+//  @Parameter
+//  private AesConf aesConf;
   
+//	@Parameter
+//	private AesMode aesMode;
+	
   @Parameter
   private String key;
 
-  public AesConf getAesConf() {
-		return aesConf;
-  }
+//  public AesMode getAesMode() {
+//		return aesMode;
+//  }
 	
   public String getKey() {
 		return key;

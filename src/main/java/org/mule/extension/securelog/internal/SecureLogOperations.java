@@ -37,20 +37,21 @@ public class SecureLogOperations {
 	private static String CHAR_SET_UTF8 = "UTF-8";
 	private static String AES = "AES";
 	private static String CIPHER = null;
+    private byte[] iv = new byte[16];
 	
 	@MediaType(value = ANY,strict = false)
 	public String encryptAES(@Config SecureLogConfiguration config, 
 			@Expression(ExpressionSupport.SUPPORTED) String stringData,@Expression(ExpressionSupport.SUPPORTED) @Optional String preText
 			) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
 		
-		switch(config.getAesConf().getAesMode()) {
-		case ECB:
-			CIPHER = "AES/ECB/PKCS5Padding";
-			break;
-		case CBC:
-			CIPHER = "AES/CBC/PKCS5Padding";
-			break;
-		}
+//		switch(config.getAesConf().getAesMode()) {
+//		case ECB:
+		CIPHER = "AES/ECB/PKCS5Padding";
+//			break;
+//		case CBC:
+//			CIPHER = "AES/CBC/PKCS5Padding";
+//			break;
+//		}
 		
 		StringBuilder msg = new StringBuilder();
 		if(preText != null) {
@@ -73,14 +74,14 @@ public class SecureLogOperations {
 			@Expression(ExpressionSupport.SUPPORTED) String data,@Expression(ExpressionSupport.SUPPORTED) @Optional String preText
 			) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
 		
-		switch(config.getAesConf().getAesMode()) {
-		case ECB:
+//		switch(config.getAesConf().getAesMode()) {
+//		case ECB:
 			CIPHER = "AES/ECB/PKCS5Padding";
-			break;
-		case CBC:
-			CIPHER = "AES/CBC/PKCS5Padding";
-			break;
-		}
+//			break;
+//		case CBC:
+//			CIPHER = "AES/CBC/PKCS5Padding";
+//			break;
+//		}
 		
 		StringBuilder msg = new StringBuilder();
 		if(preText != null) {

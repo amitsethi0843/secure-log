@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.rwc.muleconnector</groupId>
     <artifactId>secure-log</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>mule-extension</packaging>
     <name>Secure Log Extension</name>
 
