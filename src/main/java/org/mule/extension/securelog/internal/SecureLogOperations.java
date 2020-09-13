@@ -1,6 +1,7 @@
 package org.mule.extension.securelog.internal;
 
 import static org.mule.runtime.extension.api.annotation.param.MediaType.ANY;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -112,6 +113,8 @@ public class SecureLogOperations {
 		case ERROR:
 			logger.error(message);
 			break;
+		default:
+			logger.info(message);
 		}
 	}
 }
